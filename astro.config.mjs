@@ -4,4 +4,4 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     site: 'https://luis122448.github.io',
     base: '/animationland-astro/',
-  })
+  });
