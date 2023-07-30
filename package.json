@@ -10,6 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.9.3"
-  }
+    "astro": "^2.9.3",
+    "rxjs": "^7.8.1"
+  },
+  "keywords": [
+    "astro"
+  ],
+  "author": "luis122448 <luis122448@gmail.com>",
+  "license": "MIT"
 }

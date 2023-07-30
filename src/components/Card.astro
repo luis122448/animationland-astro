@@ -1,32 +1,34 @@
 ---
 interface Props {
-	title: string;
-	body: string;
+	name: string;
+	time: string;
+	score: number;
 	href: string;
 }
 
-const { href, title, body } = Astro.props;
+const { name, time, score,href } = Astro.props;
 ---
 
 <li class="link-card">
 	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
+		<h5>
+			{name}
+		</h5>
 		<p>
-			{body}
+			{time}
 		</p>
+		<input type="number" disabled value={score}>
 	</a>
 </li>
 <style>
 	.link-card {
+		width: 100px;
+		height: 80px;
 		list-style: none;
 		display: flex;
-		padding: 1px;
 		background-color: #23262d;
 		background-image: none;
-		background-size: 400%;
+		background-size: 100%;
 		border-radius: 7px;
 		background-position: 100%;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -34,22 +36,31 @@ const { href, title, body } = Astro.props;
 	}
 	.link-card > a {
 		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
+		border-radius: 7px;
+		background-color: #474a52;
 		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
 	}
-	h2 {
+	h5 {
 		margin: 0;
-		font-size: 1.25rem;
+		text-align: center;
+		font-size: 0.9rem;
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 	p {
-		margin-top: 0.5rem;
+		text-align: center;
+		margin-top: 0.9rem;
 		margin-bottom: 0;
+	}
+	input{
+		margin: 0 auto;
+		width: 40px;
+		text-align: right;
+		border-radius: 1px;
+		color: white;
 	}
 	.link-card:is(:hover, :focus-within) {
 		background-position: 0;
